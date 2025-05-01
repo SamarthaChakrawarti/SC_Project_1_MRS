@@ -1,6 +1,15 @@
 import streamlit as st
 import pickle
 import pandas as pd
+import os
+import urllib.request
+
+# Step to download file if not already present
+file_url = "https://drive.google.com/uc?export=download&id=1Jjob0vAcCJhh1js0wdT9Ah-I2VQbet4e"
+file_name = "similarity.pkl"
+
+if not os.path.exists(file_name):
+    urllib.request.urlretrieve(file_url, file_name)
 
 page_bg_img = '''
 <style>
