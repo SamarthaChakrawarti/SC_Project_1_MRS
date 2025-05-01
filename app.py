@@ -11,6 +11,11 @@ file_name = "similarity.pkl"
 if not os.path.exists(file_name):
     urllib.request.urlretrieve(file_url, file_name)
 
+# --- Load data ---
+movies_dict = pickle.load(open('movies_Dict.pkl', 'rb'))   # Keep full dataframe
+movies = pd.DataFrame(movies_dict)
+similarity = pickle.load(open('similarity.pkl', 'rb'))
+
 page_bg_img = '''
 <style>
 .stApp {
